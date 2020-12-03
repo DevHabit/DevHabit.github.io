@@ -1,9 +1,9 @@
-import React from 'react'
-import { Row, Col, Container } from 'react-bootstrap'
-import BaffleText from 'components/baffle-text'
-import AnimationContainer from 'components/animation-container'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faReact, faAngular, faAws } from '@fortawesome/free-brands-svg-icons'
+import React from "react";
+import { Row, Col, Container } from "react-bootstrap";
+import BaffleText from "components/baffle-text";
+import AnimationContainer from "components/animation-container";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faReact, faAngular, faAws } from "@fortawesome/free-brands-svg-icons";
 import {
   faPencilRuler,
   faServer,
@@ -12,24 +12,28 @@ import {
   faPizzaSlice,
   faQuoteRight,
   faCode,
-} from '@fortawesome/free-solid-svg-icons'
-import Counter from 'components/counter'
-import ThemeContext from '../../context'
-import './styles.scss'
+  faMobile,
+  faLayerGroup,
+  faBezierCurve,
+  faDatabase,
+} from "@fortawesome/free-solid-svg-icons";
+import Counter from "components/counter";
+import ThemeContext from "../../context";
+import "./styles.scss";
 
 class Services extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       show: false,
-    }
-    this.show = this.show.bind(this)
+    };
+    this.show = this.show.bind(this);
   }
 
-  static contextType = ThemeContext
+  static contextType = ThemeContext;
 
   show() {
-    this.setState({ show: true })
+    this.setState({ show: true });
   }
 
   render() {
@@ -43,9 +47,9 @@ class Services extends React.Component {
           className="top"
           style={{
             maxHeight:
-              this.context.height !== 'auto'
+              this.context.height !== "auto"
                 ? this.context.height * 0.8
-                : 'inherit',
+                : "inherit",
           }}
         >
           <div className="content">
@@ -66,9 +70,9 @@ class Services extends React.Component {
                 className="services_container"
                 style={{
                   minHeight:
-                    this.context.height !== 'auto'
+                    this.context.height !== "auto"
                       ? this.context.height * 0.6
-                      : 'inherit',
+                      : "inherit",
                 }}
               >
                 <Container>{this.services()}</Container>
@@ -78,11 +82,11 @@ class Services extends React.Component {
         </Row>
         <Row className="bottom">{this.counters()}</Row>
       </section>
-    )
+    );
   }
 
   services() {
-    if (this.state.show || this.context.height === 'auto') {
+    if (this.state.show || this.context.height === "auto") {
       return (
         <Row>
           <Col md={4} className="service">
@@ -90,74 +94,74 @@ class Services extends React.Component {
               <div className="icon">
                 <FontAwesomeIcon icon={faReact} />
               </div>
-              <h4>Front-end React</h4>
-              <p>
+              <h4>Front-end</h4>
+              {/* <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
                 dui sem, vulputate vitae dolor sed, sollicitudin pharetra nisi.
                 In et sem libero. Integer pretium, tellus eu pellentesque
                 tristique, ex libero maximus elit, mollis tristique urna eros
                 non tellus
-              </p>
+              </p> */}
             </AnimationContainer>
           </Col>
           <Col md={4} className="service border-side">
             <AnimationContainer delay={400} animation="fadeInDown fast">
               <div className="icon">
-                <FontAwesomeIcon icon={faAngular} />
+                <FontAwesomeIcon icon={faMobile} />
               </div>
-              <h4>Angular Web App</h4>
-              <p>
+              <h4>React Native Mobile App</h4>
+              {/* <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
                 dui sem, vulputate vitae dolor sed, sollicitudin pharetra nisi.
                 In et sem libero. Integer pretium, tellus eu pellentesque
                 tristique, ex libero maximus elit, mollis tristique urna eros
                 non tellus
-              </p>
+              </p> */}
             </AnimationContainer>
           </Col>
           <Col md={4} className="service">
             <AnimationContainer delay={600} animation="fadeInRight fast">
               <div className="icon">
-                <FontAwesomeIcon icon={faAws} />
+                <FontAwesomeIcon icon={faLayerGroup} />
               </div>
-              <h4>AWS Management</h4>
-              <p>
+              <h4>Fullstack Development</h4>
+              {/* <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
                 dui sem, vulputate vitae dolor sed, sollicitudin pharetra nisi.
                 In et sem libero. Integer pretium, tellus eu pellentesque
                 tristique, ex libero maximus elit, mollis tristique urna eros
                 non tellus
-              </p>
+              </p> */}
             </AnimationContainer>
           </Col>
           <Col md={4} className="service">
             <AnimationContainer delay={800} animation="fadeInLeft fast">
               <div className="icon">
-                <FontAwesomeIcon icon={faPencilRuler} className="solid" />
+                <FontAwesomeIcon icon={faAws} className="solid" />
               </div>
-              <h4>UI/UX Design</h4>
-              <p>
+              <h4>AWS Management</h4>
+              {/* <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
                 dui sem, vulputate vitae dolor sed, sollicitudin pharetra nisi.
                 In et sem libero. Integer pretium, tellus eu pellentesque
                 tristique, ex libero maximus elit, mollis tristique urna eros
                 non tellus
-              </p>
+              </p> */}
             </AnimationContainer>
           </Col>
           <Col md={4} className="service border-side">
             <AnimationContainer delay={1000} animation="fadeInUp fast">
               <div className="icon">
-                <FontAwesomeIcon icon={faServer} className="solid" />
+                <FontAwesomeIcon icon={faBezierCurve} className="solid" />
               </div>
-              <h4>Linux Server Management</h4>
-              <p>
+              <h4>Project Management</h4>
+              {/* <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
                 dui sem, vulputate vitae dolor sed, sollicitudin pharetra nisi.
                 In et sem libero. Integer pretium, tellus eu pellentesque
                 tristique, ex libero maximus elit, mollis tristique urna eros
                 non tellus
-              </p>
+              </p> */}
             </AnimationContainer>
           </Col>
           <Col md={4} className="service">
@@ -166,47 +170,47 @@ class Services extends React.Component {
                 <FontAwesomeIcon icon={faRobot} className="solid" />
               </div>
               <h4>Artifical Intelligence</h4>
-              <p>
+              {/* <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
                 dui sem, vulputate vitae dolor sed, sollicitudin pharetra nisi.
                 In et sem libero. Integer pretium, tellus eu pellentesque
                 tristique, ex libero maximus elit, mollis tristique urna eros
                 non tellus
-              </p>
+              </p> */}
             </AnimationContainer>
           </Col>
         </Row>
-      )
+      );
     }
   }
 
   counters() {
-    if (this.state.show || this.context.height === 'auto') {
+    if (this.state.show || this.context.height === "auto") {
       return (
         <Container>
-          <Col md={3}>
+          <Col md={6}>
+            <AnimationContainer delay={100} animation="fadeIn fast">
+              <Counter
+                icon={faDatabase}
+                value={20}
+                text="Projects"
+                symbol="+"
+                duration={3}
+              />
+            </AnimationContainer>
+          </Col>
+          <Col md={6}>
             <AnimationContainer delay={100} animation="fadeIn fast">
               <Counter
                 icon={faSmileBeam}
-                value={100}
-                text="Happy Clients"
+                value={10}
+                text="Years of Experience"
                 symbol="+"
                 duration={3}
               />
             </AnimationContainer>
           </Col>
-          <Col md={3}>
-            <AnimationContainer delay={100} animation="fadeIn fast">
-              <Counter
-                icon={faPizzaSlice}
-                value={1000}
-                text="Pizzas Ordered"
-                symbol="+"
-                duration={3}
-              />
-            </AnimationContainer>
-          </Col>
-          <Col md={3}>
+          {/* <Col md={3}>
             <AnimationContainer delay={100} animation="fadeIn fast">
               <Counter
                 icon={faQuoteRight}
@@ -227,11 +231,11 @@ class Services extends React.Component {
                 duration={3}
               />
             </AnimationContainer>
-          </Col>
+          </Col> */}
         </Container>
-      )
+      );
     }
   }
 }
 
-export default Services
+export default Services;
